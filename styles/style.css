@@ -13,4 +13,294 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font, sans-serif);
+  font-variation-settings: "wght" var(--text-weight, 400);
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.header {
+  width: var(--block-width);
+  margin: 0 auto;
+  font-family: var(--accent-font);
+  color: var(--text-color, #000);
+  background-color: #fff;
+  border: 2px solid #000;
+  width: var(--block-width);
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-block-start: var(--padding-tb-header);
+  padding-block-end: var(--padding-lr-header);
+}
+
+h1 {
+  font-size: var(--head-title-size);
+}
+
+.header__text {
+  font-size: var(--head-text-size);
+}
+
+.card {
+  width: var(--block-width);
+  background-color: #fff;
+  font-size: 18px;
+  margin-block-end: 50px;
+  outline: 2px solid var(--text-color, #000);
+  outline-offset: -2px;
+  margin: 0 auto;
+}
+
+.card__image-container {
+  position: relative;
+  inset: 0;
+}
+
+.card__title {
+  font-variation-settings: 'wght' var(--title-weight, 700);
+  font-size: 18px;
+  padding-block: 5px;
+  padding-inline: 10px;
+}
+
+.card__image {
+  object-position: center;
+  object-fit: cover;
+  inline-size: 100%;
+  outline: 2px solid var(--text-color, #000);
+  outline-offset: -2px;
+  aspect-ratio: 1/1;
+}
+
+.card__content {
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--text-weight, 400);
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px;
+}
+
+.card__buttons {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--accent-font);
+  display: flex;
+  justify-content: end;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+
+.card__like-button {
+  margin: 12.5px, 37px;
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.like-icon {
+  display: block;
+}
+
+.label {
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  font-family: var(--accent-font, 'PressStart2P'), 'Papyrus', fantasy;
+  font-size: 14px;
+  font-weight: 400;
+  mix-blend-mode: hard-light;
+  color: rgba(0 0 0 / 0.75);
+  text-shadow:
+    -1px 0 var(--label-color, rgb(255 255 255 / 0.5)), 
+    0 1px var(--label-color, rgb(255 255 255 / 0.5)), 
+    1px 0 var(--label-color, rgb(255 255 255 / 0.5)), 
+    0 -1px var(--label-color, rgb(255 255 255 / 0.5));
+}
+
+@supports((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
+  .card__image-watermark {
+    -webkit-text-stroke: 1px var(--label-color, rgb(255 255 255 / 0.5));
+    text-stroke: 1px var(--label-color, rgb(255 255 255 / 0.5));
+    text-shadow: none;
+  }
+} 
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+
+.card__image-brightness {
+  filter: brightness(200%);
+}
+
+.card__image-blur {
+  filter: blur(0.2rem);
+}
+
+.card__image-gray {
+  filter: grayscale(0.8);
+}
+
+.card__image-contrast {
+  filter: contrast(40%) brightness(80%);
+}
+
+.card__image-saturate {
+  filter: saturate(145%) ;
+}
+
+.card__image-hue-rotate {
+  filter: hue-rotate(-90deg);
+}
+
+.card__image-sepia {
+    filter: sepia(80%);
+}
+
+.button {
+  background-color: #fff;
+  border: 2px solid #000;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  color: #000;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: currentColor;
+  size: 100%;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.button__text {
+  font-family: var(--accent-font, Courier, monospace);
+  font-size: 14px;
+  color: rgb(255 255 255);
+  mix-blend-mode: difference;
+}
+
+.card__like-button {
+  min-inline-size: 130px;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.save-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 100px;
+  column-gap: 8px;
+  inline-size: 339px;
+  block-size: 55px;
+  padding: 16px 1px 15px 0;
+}
+
+.floppy-icon {
+  width: 23px;
+  height: 23px;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+
+#dialog-id {
+  color: var(--text-color, #000);
+  background-color: var(--bg-color, #FFF);
+  border: 2px solid var(--text-color, #000);
+  padding: 30px;
+  width: 341px;
+  height: 191px;
+  font-size: 14px;
+}
+
+#dialog-id[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+#dialog-id::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+} 
+
+.dialog__form {
+  inline-size: 257px;
+}
+
+.dialog__button {
+  block-size: 38px;
+  inline-size: 100%;
+}
+.dialog__button:focus {
+  box-shadow: none;
+}
+
+.dialog__button:focus-visible {
+  box-shadow: 2px 2px 0 var(--text-color, #000);
+}
+
+.dialog__menu {
+  display: flex;
+  align-items: center;
+  inline-size: 257px;
+ }
+
+.dialog__floppy {
+  flex-shrink: 0;
+  block-size: 39px;
+  inline-size: 39px;
+  mix-blend-mode: normal;
+  margin-inline-end: 20px;
+ }
+
+.dialog__text {
+  font-family: var(--accent-font, 'PressStart2P'), 'Papyrus', fantasy;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    width: 100%;
+  }
+
+  .floppy-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .save-button {
+    flex-direction: column;
+  }
+
+  .dialog__id {
+    padding: 30px 42px;
+    max-width: 341px;
+  }
+}
+
+
