@@ -21,9 +21,9 @@
 }
 
 .header {
-  width: var(--block-width);
+  width: var(--block-width, clamp(375px, 50%, 700px));
   margin: 0 auto;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'PressStart2P'), monospace;
   color: var(--text-color, #000);
   background-color: #fff;
   border: 2px solid #000;
@@ -34,20 +34,20 @@
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  padding-block-start: var(--padding-tb-header);
-  padding-block-end: var(--padding-lr-header);
+  padding-block-start: var(--padding-tb-header, clamp(120px, 106%, 128px));
+  padding-block-end: var(--padding-lr-header, clamp(14px, 860%, 120.5px));
 }
 
 h1 {
-  font-size: var(--head-title-size);
+  font-size: var(--head-title-size, clamp(49px, 175%, 65px));
 }
 
 .header__text {
-  font-size: var(--head-text-size);
+  font-size: var(--head-text-size, clamp(14px, 160%, 23px));
 }
 
 .card {
-  width: var(--block-width);
+  width: var(--block-width, clamp(375px, 50%, 700px));
   background-color: #fff;
   font-size: 18px;
   margin-block-end: 50px;
@@ -89,7 +89,7 @@ h1 {
 .card__buttons {
   font-size: 14px;
   font-weight: 400;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'PressStart2P'), monospace;
   display: flex;
   justify-content: end;
   padding-right: 25px;
@@ -110,7 +110,7 @@ h1 {
   position: absolute;
   inset-block-start: 25px;
   inset-inline-end: 25px;
-  font-family: var(--accent-font, "PressStart2P"), "Papyrus", fantasy;
+  font-family: var(--accent-font, 'PressStart2P'), monospace;
   font-size: 14px;
   font-weight: 400;
   mix-blend-mode: hard-light;
@@ -189,7 +189,7 @@ h1 {
 }
 
 .button__text {
-  font-family: var(--accent-font, Courier, monospace);
+  font-family: var(--accent-font, 'PressStart2P'), monospace;
   font-size: 14px;
   color: rgb(255 255 255);
   mix-blend-mode: difference;
@@ -199,15 +199,19 @@ h1 {
   transform: scaleX(1);
 }
 
+.card__save-button {
+  size: 100%;
+}
+
 .save-button {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto 100px;
-  column-gap: 8px;
+  gap: 8px;
   inline-size: 339px;
   block-size: 55px;
-  padding: 16px 1px 15px 0;
+  padding: 15px 19px;
 }
 
 .floppy-icon {
@@ -216,6 +220,13 @@ h1 {
   position: relative;
   z-index: 1;
   display: block;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: 2px solid transparent;
 }
 
 #dialog-id {
@@ -270,27 +281,28 @@ h1 {
 }
 
 .dialog__text {
-  font-family: var(--accent-font, "PressStart2P"), "Papyrus", fantasy;
+  font-family: var(--accent-font, 'PressStart2P'), monospace;
   text-transform: uppercase;
   line-height: 1.5;
 }
 
-@media screen and (max-width: 375px) {
+@media (width <= 375px) {
   .header {
     width: 100%;
   }
 
-  .floppy-icon {
+  .save-button {
+    flex-direction: column;
+    block-size: 84px;
+  }
+
+  .save-button .floppy-icon {
     width: 28px;
     height: 28px;
   }
 
-  .save-button {
-    flex-direction: column;
-  }
-
   .dialog__id {
-    padding: 30px 42px;
+    padding: 29px 42px;
     max-width: 341px;
   }
 }
