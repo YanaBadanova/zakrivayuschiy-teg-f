@@ -197,10 +197,6 @@ h1 {
   mix-blend-mode: difference;
 }
 
-.card__like-button {
-  min-inline-size: 130px;
-}
-
 .button:hover::before {
   transform: scaleX(1);
 }
