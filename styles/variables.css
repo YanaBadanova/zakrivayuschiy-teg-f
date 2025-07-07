@@ -9,11 +9,11 @@
     repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
   --block-width: clamp(375px, 50%, 700px);
-  --head-title-size: clamp(49px, 175%, 65px);
-  --head-text-size: clamp(14px, 160%, 23px);
+  --head-title-size: clamp(49px, 34.3px + 3.92vw, 65px);
+  --head-text-size: clamp(14px, 8.23px + 1.53vw, 23px);
   --text-color: #000;
   --padding-lr-header: clamp(14px, 860%, 120.5px);
-  --padding-tb-header: clamp(120px, 106%, 128px);
+  --padding-tb-header: clamp(120px, 117.23px + 0.75vw, 128px);
   --label-color: rgb(255 255 255 / 0.5);
   --bg-color: #fff;
   --button-color: var(--bg-color, #fff);
