@@ -84,6 +84,7 @@
   flex-direction: column;
   gap: 27px;
   padding: 25px;
+  line-height: 21px;
 }
 
 .card__buttons {
@@ -124,7 +125,7 @@
 }
 
 @supports ((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
-  .card__image-watermark {
+  .label {
     -webkit-text-stroke: 1px var(--label-color, rgb(255 255 255 / 0.5));
     text-stroke: 1px var(--label-color, rgb(255 255 255 / 0.5));
     text-shadow: none;
@@ -318,6 +319,7 @@
   .save-button {
     flex-direction: column;
     block-size: 84px;
+    max-width: 308px;
   }
 
   .save-button .floppy-icon {
